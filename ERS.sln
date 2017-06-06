@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERS.Web", "ContosoUniversit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERS.Data", "TestEFCore.Data\ERS.Data.csproj", "{6BA29B78-9E3B-43DE-A705-276A431619AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERS.BusinessLogic", "ERS.BusinessLogic\ERS.BusinessLogic.csproj", "{2D34EBED-508C-4F20-AFA0-37DF5EDC2954}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6BA29B78-9E3B-43DE-A705-276A431619AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BA29B78-9E3B-43DE-A705-276A431619AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BA29B78-9E3B-43DE-A705-276A431619AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D34EBED-508C-4F20-AFA0-37DF5EDC2954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D34EBED-508C-4F20-AFA0-37DF5EDC2954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D34EBED-508C-4F20-AFA0-37DF5EDC2954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D34EBED-508C-4F20-AFA0-37DF5EDC2954}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

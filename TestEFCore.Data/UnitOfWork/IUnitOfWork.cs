@@ -4,10 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using TestEFCore.Data.Entity;
-using TestEFCore.Data.Infrastructure;
+using ERS.Data.Entity;
+using ERS.Data.Infrastructure;
 
-namespace TestEFCore.Data.UnitOfWork
+namespace ERS.Data.UnitOfWork
 {
     public interface IUnitOfWork<U> where U : DbContext, IDisposable
     {
@@ -18,6 +18,8 @@ namespace TestEFCore.Data.UnitOfWork
       //  IRepository<Category> CategoryRepository { get; }
 
         ICategoryRepository CategoryRepository { get; }
+        
+
         IRepository<Department> DepartmentRepository { get; }
     }
 }

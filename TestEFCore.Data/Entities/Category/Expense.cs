@@ -1,7 +1,7 @@
 ﻿using ERS.Data.Entities;
 using System;
 
-namespace TestEFCore.Data.Entity
+namespace ERS.Data.Entity
 {
     public class Expense : BaseEntity<int>
     {

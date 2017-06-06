@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace TestEFCore.Data.Infrastructure
+namespace ERS.Data.Infrastructure
 {
     public interface IRepository<TEntity> where TEntity : class
     {

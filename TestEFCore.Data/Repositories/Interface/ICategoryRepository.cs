@@ -2,8 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using TestEFCore.Data.Entity;
-using TestEFCore.Data.Infrastructure;
+using ERS.Data.Entity;
+using ERS.Data.Infrastructure;
 
 namespace ERS.Data.Repositories.Interface
 {

@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using TestEFCore.Data.Entity;
+using ERS.Data.Entity;
 
-namespace TestEFCore.Data.ERSContext
+namespace ERS.Data.ERSContext
 {
     public class DepartmentContext : DbContext
     {
@@ -21,7 +21,7 @@ namespace TestEFCore.Data.ERSContext
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=TestEFCore;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=ERS;Integrated Security=True");
         }
     }
 }

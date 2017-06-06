@@ -5,7 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace TestEFCore.Data.Infrastructure
+namespace ERS.Data.Infrastructure
 {
     public class RepositoryBase<TEntity> : Disposable, IRepository<TEntity>
         where TEntity : class

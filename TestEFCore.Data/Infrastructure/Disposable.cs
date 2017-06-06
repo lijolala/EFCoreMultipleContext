@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TestEFCore.Data.Infrastructure
+namespace ERS.Data.Infrastructure
 {
     public class Disposable : IDisposable
     {

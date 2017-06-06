@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace  TestEFCore.Data.Entity
+namespace  ERS.Data.Entity
 {
     public class User : BaseEntity<int>
     {

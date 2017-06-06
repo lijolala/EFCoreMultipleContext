@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
-using TestEFCore.Data.Entity;
+using ERS.Data.Entity;
 
-namespace TestEFCore.Data.ERSContext
+namespace ERS.Data.ERSContext
 {
    public class CategoryContext:DbContext
     {
@@ -35,7 +35,7 @@ namespace TestEFCore.Data.ERSContext
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // get from config fie
-            optionsBuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=TestEFCore;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=Test;Integrated Security=True");
         }
     }
 

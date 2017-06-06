@@ -5,10 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using TestEFCore.Data.Entity;
-using TestEFCore.Data.Infrastructure;
+using ERS.Data.Entity;
+using ERS.Data.Infrastructure;
 
-namespace TestEFCore.Data.UnitOfWork
+namespace ERS.Data.UnitOfWork
 {
     public class UnitOfWork<TContext> : Disposable, IUnitOfWork<TContext>
        where TContext : DbContext, new()

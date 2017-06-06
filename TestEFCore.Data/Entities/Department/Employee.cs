@@ -1,6 +1,6 @@
 ﻿using ERS.Data.Entities;
 
-namespace TestEFCore.Data.Entity
+namespace ERS.Data.Entity
 {
     public class Employee : BaseEntity<int>
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TestEFCore.Data
+namespace ERS.Data
 {
     public class Class1
     {

@@ -1,7 +1,7 @@
 ﻿using ERS.Data.Entities;
 using System.Collections.Generic;
 
-namespace TestEFCore.Data.Entity
+namespace ERS.Data.Entity
 {
     public class Category : BaseEntity<int>
     {
