@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using ERS.Data.Infrastructure;
 using ERS.Data.UnitOfWork;
+using System.Threading.Tasks;
 
 namespace ERS.BusinessLogic
 {
@@ -20,103 +21,131 @@ namespace ERS.BusinessLogic
             }
         }
 
-        private UnitOfWork _unitOfWork;
-        protected UnitOfWork UnitOfWork
-        {
-            get
-            {
-                return this._unitOfWork ?? (this._unitOfWork = new UnitOfWork(this.Factory,
-                                                        this.CurrentLoggedInUserID,
-                                                        this.CurrentLoggedInUserName));
-            }
-        }
+
+
+        //private UnitOfWork _unitOfWork;
+        //protected UnitOfWork UnitOfWork
+        //{
+        //    get
+        //    {
+        //        return this._unitOfWork ?? (this._unitOfWork = new UnitOfWork(this.data);
+        //    }
+        //}
 
         protected IRepository<TEntity> Repository;
         // ReSharper disable once StaticMemberInGenericType
         protected static int DefaultMaxResults = 20;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         #endregion
-
         public IEnumerable<TEntity> GetAll()
         {
-            return this.Repository.FirstOrDefault(predicate);
+            return this.Repository.GetAll();
         }
 
-        /// <summary>
-        /// Firsts the or default.
-        /// </summary>
-        /// <returns></returns>
-        public TEntity FirstOrDefault()
+        public TEntity GetById(int id)
         {
-            return this.Repository.FirstOrDefault();
+            return this.Repository.GetById(id);
         }
 
         /// <summary>
-        /// Finds the specified identifier.
+        /// 
         /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <returns></returns>
-        public virtual TEntity Find(int id)
-        {
-            return this.Repository.Get(id);
-        }
-
-        /// <summary>
-        /// Counts the specified predicate.
-        /// </summary>
-        /// <param name="predicate">The predicate.</param>
-        /// <returns></returns>
-        public int Count(Expression<Func<TEntity, bool>> predicate = null)
-        {
-            return this.Repository.Count();
-        }
-
-        /// <summary>
-        /// Inserts the specified entity.
-        /// </summary>
-        /// <param name="entity">The entity.</param>
-        public virtual void Insert(T entity)
+        /// <param name="entity"></param>
+        public void Insert(TEntity entity)
         {
             this.Repository.Insert(entity);
         }
 
         /// <summary>
-        /// Updates the specified entity.
+        /// 
         /// </summary>
-        /// <param name="entity">The entity.</param>
-        public virtual void Update(T entity)
+        /// <param name="entity"></param>
+        public void Update(TEntity entity)
         {
             this.Repository.Update(entity);
         }
 
         /// <summary>
-        /// Deletes the specified identifier.
+        /// 
         /// </summary>
-        /// <param name="id">The identifier.</param>
-        public virtual void Delete(object id)
+        /// <param name="id"></param>
+        public void Delete(int id)
         {
             this.Repository.Delete(id);
         }
 
         /// <summary>
-        /// Deletes the specified entity.
+        /// 
         /// </summary>
-        /// <param name="entity">The entity.</param>
-        public virtual void Delete(T entity)
+        /// <param name="entity"></param>
+        public void Delete(TEntity entity)
         {
             this.Repository.Delete(entity);
         }
 
         /// <summary>
-        /// Attach entity to the current data context.
+        /// 
         /// </summary>
-        /// <param name="entity"></param>
-        public virtual void Attach(T entity)
+        /// <param name="where"></param>
+        public void Delete(Expression<Func<TEntity, bool>> @where)
         {
-            this.Repository.Attach(entity);
+            this.Repository.Delete(where);
         }
-              
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="where"></param>
+        /// <returns></returns>
+        public TEntity Get(Expression<Func<TEntity, bool>> @where)
+        {
+            return this.Repository.Get(where);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="where"></param>
+        /// <returns></returns>
+        public IEnumerable<TEntity> GetMany(Expression<Func<TEntity, bool>> where)
+        {
+            return this.Repository.GetMany(where);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<TEntity>> GetAllAsync()
+        {
+            return await this.Repository.GetAllAsync();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="where"></param>
+        /// <returns></returns>
+        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> @where)
+        {
+            return await this.Repository.GetAsync(where);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="where"></param>
+        /// <returns></returns>
+        public async Task<List<TEntity>> GetManyAsync(Expression<Func<TEntity, bool>> @where)
+        {
+            return await this.Repository.GetManyAsync(where);
+        }
+
+     
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
@@ -126,10 +155,6 @@ namespace ERS.BusinessLogic
         }
 
         #region User
-
-        public int? CurrentLoggedInUserID { get; set; }
-
-        public string CurrentLoggedInUserName { get; set; }
 
         #endregion
 

@@ -13,6 +13,12 @@ namespace ERS.Data.UnitOfWork
     public class UnitOfWork<TContext> : Disposable, IUnitOfWork<TContext>
        where TContext : DbContext, new()
     {
+        private readonly DbContext _dataContext;
+        public UnitOfWork()
+        {
+            _dataContext = new TContext();
+        }
+
         public virtual int Commit()
         {
             return _dataContext.SaveChanges();
@@ -23,12 +29,9 @@ namespace ERS.Data.UnitOfWork
             return _dataContext.SaveChangesAsync();
         }
 
-        private readonly DbContext _dataContext;
+        
 
-        public UnitOfWork()
-        {
-            _dataContext = new TContext();
-        }
+        
 
         protected override void DisposeCore()
         {
